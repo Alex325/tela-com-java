@@ -1,0 +1,1 @@
+mvn clean install && java -jar target/tela-com-java-1.0.jar
