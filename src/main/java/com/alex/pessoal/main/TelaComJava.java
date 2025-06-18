@@ -11,6 +11,7 @@ package com.alex.pessoal.main;
 public class TelaComJava {
 
     public static void main(String[] args) {
-        Tela tela = new Tela("Teste", 1280, 720);
+        Jogo jogo = new Jogo();
+        jogo.run();
     }
 }
