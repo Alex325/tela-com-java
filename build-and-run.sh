@@ -1,1 +1,1 @@
-mvn clean install && java -jar target/tela-com-java-1.0.jar
+mvn clean install && java -jar -Djava.library.path="/home/ice/aaaaaaaaaa/tela-com-java/lib/" target/tela-com-java-1.0.jar

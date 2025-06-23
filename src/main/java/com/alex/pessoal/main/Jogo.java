@@ -4,7 +4,7 @@ import java.awt.GraphicsEnvironment;
 
 public class Jogo {
     
-    private Tela tela;
+    private final Tela tela;
     private boolean running;
     
     private long lastTime = System.nanoTime();
@@ -14,18 +14,17 @@ public class Jogo {
     private final double frameCheck = 1_000_000_000 / refreshRate;
 
     public Jogo() {
-        tela = new Tela("Jogo", 1280, 720);
-        running = false;
+        tela = new Tela("Jogo", 1280, 720, 1);
+        running = true;
     }
 
     public void run() {
-        while (running) {
+        while (!tela.shouldClose()) {
             double dt = getDelta();
             pollInputs();
             tick(dt);
             render(dt);
-            running = !tela.getClosed();
-        }
+            }        
     }
 
     private void pollInputs() {
